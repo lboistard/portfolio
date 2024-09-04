@@ -14,15 +14,7 @@
     <meta property="og:image" content="">
     <meta property="og:site_name" content="Personnal">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml">
-    <script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
-    <script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script>
-    <script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
-    <script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
-    <script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
-    <script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
-    <script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨🏻‍💻</text></svg>">
-    <script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
     <style>
       body {
       	font-family: "Inter";
@@ -289,52 +281,7 @@
         border-radius: var(--radius-s)
       }
     </style>
-    <script defer="">
-      async function loadIncludes() {
-        if ("file:" != location.protocol) {
-          let e = document.querySelectorAll("include");
-          for (let t = 0; t < e.length; t++) {
-            let o = e[t],
-              l = o.getAttribute("src");
-            try {
-              const e = await fetch(l);
-              if (!e.ok) {
-                console.log("Could not include file: " + l), o?.remove();
-                continue
-              }
-              let t = await e.text(),
-                n = document.createRange().createContextualFragment(t),
-                i = Array.from(n.children);
-              for (let e of i) e.classList.add("hide"), e.style.transition = "opacity 0.5s ease-in-out", setTimeout((() => {
-                e.classList.remove("hide")
-              }), 10);
-              o.before(n), o.remove(), console.log("Included file: " + l)
-            } catch (e) {
-              o?.remove(), console.log("Could not include file: " + l, e);
-              continue
-            }
-          }
-        } else {
-          if (document.querySelectorAll("include").length > 0) {
-            var e = document.createElement("div");
-            e.id = "error", e.textContent = "", e.style.position = "fixed", e.style.top = "50%", e.style.left = "50%", e.style.transform = "translate(-50%, -50%)", e.style.fontSize = "1.5em", e.style.fontWeight = "bold", e.style.textAlign = "center", document.body.appendChild(e), document.querySelector(".document-container")?.classList.remove("hide")
-          }
-        }
-      }
-      document.addEventListener("DOMContentLoaded", (() => {
-        loadIncludes()
-      }));
-      let isFileProtocol = "file:" == location.protocol;
-
-      function waitLoadScripts(e, t) {
-        let o = e.map((e => document.getElementById(e + "-script"))),
-          l = 0;
-        ! function e() {
-          let n = o[l];
-          l++, n && "true" != n.getAttribute("loaded") || l < o.length && e(), l < o.length ? n.addEventListener("load", e) : t()
-        }()
-      }
-    </script>
+   
     <link rel="stylesheet" href="lib/styles/obsidian.css">
     <link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
@@ -346,32 +293,9 @@
     </noscript>
   </head>
   <body class="publish css-settings-manager theme-light show-inline-title show-ribbon">
-    <script defer="">
-      let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")), window.innerWidth < 480 ? document.body.classList.add("is-phone") : window.innerWidth < 768 ? document.body.classList.add("is-tablet") : window.innerWidth < 1024 ? document.body.classList.add("is-small-screen") : document.body.classList.add("is-large-screen")
-    </script>
+    
     <div class="webpage-container workspace">
-      <div class="sidebar-left sidebar">
-        <div class="sidebar-handle"></div>
-        <div class="sidebar-topbar">
-          <div class="topbar-content">
-            <label class="theme-toggle-container" for="theme_toggle">
-              <input class="theme-toggle-input" type="checkbox" id="theme_toggle">
-              <div class="toggle-background"></div>
-            </label>
-          </div>
-        </div>
-        <div class="sidebar-content" style="background-color: white">
-          <include src="lib/html/file-tree.html"></include>
-        </div>
-        <script defer="">
-          let ls = document.querySelector(".sidebar-left");
-          ls.classList.add("is-collapsed");
-          if (window.innerWidth > 768) ls.classList.remove("is-collapsed");
-          ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));
-        </script>
-      </div>
-      <div class="document-container markdown-reading-view hide">
+      <div class="document-container markdown-reading-view">
         <div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width">
           <style id="MJX-CHTML-styles"></style>
           <div class="markdown-preview-sizer markdown-preview-section">
@@ -681,166 +605,7 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="sidebar-right sidebar">
-        <div class="sidebar-handle"></div>
-        <div class="sidebar-topbar">
-          <div class="topbar-content"></div>
-        </div>
-        <div class="sidebar-content" style="background-color: white">
-          <div class="graph-view-wrapper">
-            <div class="sidebar-section-header">Interactive Graph</div>
-            <div class="graph-view-placeholder">
-              <div class="graph-view-container">
-                <div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </div>
-                <canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
-              </div>
-            </div>
-          </div>
-          <div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0">
-            <div class="tree-header">
-              <span class="sidebar-section-header" style="text-transform: none; ">Table Of Contents</span>
-            </div>
-            <div class="tree-scroll-area tree-item-children nav-folder-children">
-              <div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div>
-              <div class="tree-item" data-depth="1">
-                <a class="tree-link" href="lucas-boistard-lead-developper.html#Lucas Boistard - Lead Developper">
-                  <div class="tree-item-contents heading-link" heading-name="Lucas Boistard - Lead Developper">
-                    <span class="tree-item-title" style="font-weight: 600;">Lucas Boistard - Lead Developper</span>
-                  </div>
-                </a>
-                <div class="tree-item-children nav-folder-children">
-                  <div class="tree-item" data-depth="2">
-                    <a class="tree-link" href="lucas-boistard-lead-developper.html#Spoken_languages">
-                      <div class="tree-item-contents heading-link" heading-name="Spoken languages">
-                        <span class="tree-item-title">Spoken languages</span>
-                      </div>
-                    </a>
-                    <div class="tree-item-children nav-folder-children"></div>
-                  </div>
-                  <div class="tree-item" data-depth="2">
-                    <a class="tree-link" href="lucas-boistard-lead-developper.html#Soft_Skills">
-                      <div class="tree-item-contents heading-link" heading-name="Soft Skills">
-                        <span class="tree-item-title">Soft Skills</span>
-                      </div>
-                    </a>
-                    <div class="tree-item-children nav-folder-children"></div>
-                  </div>
-                  <div class="tree-item mod-collapsible" data-depth="2">
-                    <a class="tree-link" href="lucas-boistard-lead-developper.html#Technical_Skills">
-                      <div class="tree-item-contents heading-link" heading-name="Technical Skills">
-                        <div class="collapse-icon">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
-                            <path d="M3 8L12 17L21 8"></path>
-                          </svg>
-                        </div>
-                        <span class="tree-item-title">Technical Skills</span>
-                      </div>
-                    </a>
-                    <div class="tree-item-children nav-folder-children">
-                      <div class="tree-item" data-depth="4">
-                        <a class="tree-link" href="lucas-boistard-lead-developper.html#Overview_:">
-                          <div class="tree-item-contents heading-link" heading-name="Overview :">
-                            <span class="tree-item-title">Overview :</span>
-                          </div>
-                        </a>
-                        <div class="tree-item-children nav-folder-children"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="tree-item mod-collapsible" data-depth="2">
-                    <a class="tree-link" href="lucas-boistard-lead-developper.html#💼_Experience">
-                      <div class="tree-item-contents heading-link" heading-name="💼 Experience">
-                        <div class="collapse-icon">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
-                            <path d="M3 8L12 17L21 8"></path>
-                          </svg>
-                        </div>
-                        <span class="tree-item-title">💼 Experience</span>
-                      </div>
-                    </a>
-                    <div class="tree-item-children nav-folder-children">
-                      <div class="tree-item" data-depth="3">
-                        <a class="tree-link" href="lucas-boistard-lead-developper.html#Ask_for_the_Moon_-_Lead_Developper">
-                          <div class="tree-item-contents heading-link" heading-name="Ask for the Moon - Lead Developper">
-                            <span class="tree-item-title">Ask for the Moon - Lead Developper</span>
-                          </div>
-                        </a>
-                        <div class="tree-item-children nav-folder-children"></div>
-                      </div>
-                      <div class="tree-item" data-depth="3">
-                        <a class="tree-link" href="lucas-boistard-lead-developper.html#Alltoo_-_Freelance_Full-Stack_Developper">
-                          <div class="tree-item-contents heading-link" heading-name="Alltoo - Freelance Full-Stack Developper">
-                            <span class="tree-item-title">Alltoo - Freelance Full-Stack Developper</span>
-                          </div>
-                        </a>
-                        <div class="tree-item-children nav-folder-children"></div>
-                      </div>
-                      <div class="tree-item" data-depth="3">
-                        <a class="tree-link" href="lucas-boistard-lead-developper.html#Fondation_Ophtalmologique_A._de_Rothschild_-_Data_Research_Intern">
-                          <div class="tree-item-contents heading-link" heading-name="Fondation Ophtalmologique A. de Rothschild - Data Research Intern">
-                            <span class="tree-item-title">Fondation Ophtalmologique A. de Rothschild - Data Research Intern</span>
-                          </div>
-                        </a>
-                        <div class="tree-item-children nav-folder-children"></div>
-                      </div>
-                      <div class="tree-item" data-depth="3">
-                        <a class="tree-link" href="lucas-boistard-lead-developper.html#Murex_-_Java_Developper_Intern">
-                          <div class="tree-item-contents heading-link" heading-name="Murex - Java Developper Intern">
-                            <span class="tree-item-title">Murex - Java Developper Intern</span>
-                          </div>
-                        </a>
-                        <div class="tree-item-children nav-folder-children"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="tree-item mod-collapsible" data-depth="2">
-                    <a class="tree-link" href="lucas-boistard-lead-developper.html#👨‍🎓_Education">
-                      <div class="tree-item-contents heading-link" heading-name="👨‍🎓 Education">
-                        <div class="collapse-icon">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
-                            <path d="M3 8L12 17L21 8"></path>
-                          </svg>
-                        </div>
-                        <span class="tree-item-title">👨‍🎓 Education</span>
-                      </div>
-                    </a>
-                    <div class="tree-item-children nav-folder-children">
-                      <div class="tree-item" data-depth="3">
-                        <a class="tree-link" href="lucas-boistard-lead-developper.html#ESME-Sudria_-_Master">
-                          <div class="tree-item-contents heading-link" heading-name="ESME-Sudria - Master">
-                            <span class="tree-item-title">ESME-Sudria - Master</span>
-                          </div>
-                        </a>
-                        <div class="tree-item-children nav-folder-children"></div>
-                      </div>
-                      <div class="tree-item" data-depth="3">
-                        <a class="tree-link" href="lucas-boistard-lead-developper.html#ESME-Sudria_-_Integrated_preparatory_class">
-                          <div class="tree-item-contents heading-link" heading-name="ESME-Sudria - Integrated preparatory class">
-                            <span class="tree-item-title">ESME-Sudria - Integrated preparatory class</span>
-                          </div>
-                        </a>
-                        <div class="tree-item-children nav-folder-children"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <script defer="">
-          let rs = document.querySelector(".sidebar-right");
-          rs.classList.add("is-collapsed");
-          if (window.innerWidth > 768) rs.classList.remove("is-collapsed");
-          rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));
-        </script>
-      </div>
+      </div>     
     </div>
   </body>
 </html>
