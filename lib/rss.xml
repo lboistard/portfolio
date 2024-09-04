@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Personnal]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.png</url><title>Personnal</title><link></link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 04 Sep 2024 20:00:24 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 04 Sep 2024 20:00:24 GMT</pubDate><ttl>60</ttl><dc:creator></dc:creator><item><title><![CDATA[Lucas Boistard - Lead Developper]]></title><description><![CDATA[ 
+ <br>  <img style="width: 100%; max-width: 400px; height: auto;" alt="Description of image" src="https://media.licdn.com/dms/image/D4E03AQFtv530sDjJLw/profile-displayphoto-shrink_400_400/0/1669133848883?e=2147483647&amp;v=beta&amp;t=661-Ifhy8re8c-4L0zE8Ng8lBw-BUtZ9Qywu54P9z5Y" referrerpolicy="no-referrer">  
+I'm a 27 years old lead Developer with 4+ years of experience in crafting dynamic web applications and driving impactful solutions.<br>Passionate about deeply understanding customer challenges and collaborating with teammates to design and deliver impactful applications.<br><br>Currently living in Margency, Val d'Oise:<br>
+<br>💻 I love making small tech project at home to help me automate redundant stuff (such as choosing what to eat next week).
+<br>🏃🏻 I practice trail running and enjoy spending time running in the woods near by where I live.
+<br><br>
+<br>French ( Native ) 
+<br>English ( Fluent ) 
+<br><br>
+<br>Positivity: Even in complex situation or period of tension, it's important to share a positive attitude to motivate people to move forward.
+<br>Teamwork : Be able to work with a team and as a team to ship great products.
+<br>Resilience : bounce back quickly from challenges.
+<br><br><br>📂 Version control 
+Git Github (for merge requests, code reviews...) <br>💻 Development and Framework
+ Python Django FastAPI Javascript Typescript ReactJS Express Koa Shell Java 
+🏗️ Infrastructure 
+Docker Kubernetes<br>💾 Database/Message Broker 
+MongoDB PostgreSQL Neo4J ElasticSearch Redis Milvus (Vector store) <br>🧪 Monitoring and Testing 
+ Grafana Cypress Mocha Chai Jest <br><br><br>August 2022 - Present<br>Full-stack Developper and then Lead Developper<br>
+<br>Build, test and deploy the Web Application
+<br>Meet customers to understands their daily issues and design product guidelines to help them with our tools.
+<br>In charge of the vector database development for AI features (such as hybrid search, RAG)
+<br>Guarantee the quality, architecture and durability of the codebase
+<br>Integrate AI functionality inside the web-application and monitor their usage.
+<br>Code refactoring and typescript migration of the codebase 
+<br><br>October 2020 - July 2022<br>Backend developper and then full-stack developper<br>
+<br>Build the API for an OCR to help energy supplier evaluate the CO2 emission of a project
+<br>Deploy and manage the stability and scalability of the SAAS
+<br>Design and implement new features
+<br><br>January 2020 - March 2021<br>
+<br>Implement Image analisys algorithm to compute the surface of head arteries.
+<br>Provide 3D manipulable shape of the blood vessels structure of the Aortic Arch for mechanical thrombectomy operations.
+<br>Calculating the surface area of ​​brain blood vessels for bilateral sinus stenosis pathologies 
+<br>Help write a published medical academic paper with Hôpital Pitié Salpêtrière
+
+<br><a rel="noopener" class="external-link" href="https://www.researchgate.net/publication/352734067_Global_collapse_of_the_dural_sinuses_after_venous_stenting_in_idiopathic_intracranial_hypertension" target="_blank">https://www.researchgate.net/publication/352734067_Global_collapse_of_the_dural_sinuses_after_venous_stenting_in_idiopathic_intracranial_hypertension</a>
+
+
+<br><br>February 2019 - July 2019<br>
+<br>Design and deploy a market data simulator tool to help operational team to evaluate customers requirements
+<br><br><br>september 2019&nbsp;-&nbsp;september 2021<br>
+<br>Specialisation in Biotechnological and Computer Science applied to Medical field
+<br>Machine Learning &amp; Deep learning fundamentals
+<br>Computer vision
+<br>Big data basics 
+<br>Medical hardware and software
+<br><br>september 2016&nbsp;-&nbsp;september 2019<br>
+<br>Fundamental physics and mathematics
+<br>Fundamental  informatic and algorithmic
+<br>Finance &amp; management
+]]></description><link>lucas-boistard-lead-developper.html</link><guid isPermaLink="false">Lucas Boistard - Lead Developper.md</guid><pubDate>Wed, 04 Sep 2024 19:37:15 GMT</pubDate><enclosure url="https://media.licdn.com/dms/image/D4E03AQFtv530sDjJLw/profile-displayphoto-shrink_400_400/0/1669133848883?e=2147483647&amp;v=beta&amp;t=661-Ifhy8re8c-4L0zE8Ng8lBw-BUtZ9Qywu54P9z5Y" length="0" type="false"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;https://media.licdn.com/dms/image/D4E03AQFtv530sDjJLw/profile-displayphoto-shrink_400_400/0/1669133848883?e=2147483647&amp;v=beta&amp;t=661-Ifhy8re8c-4L0zE8Ng8lBw-BUtZ9Qywu54P9z5Y&quot;&gt;&lt;/figure&gt;</content:encoded></item></channel></rss>
